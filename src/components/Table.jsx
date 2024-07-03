@@ -15,7 +15,7 @@ const Table = () => {
   useEffect(() => {
     const fetchAirports = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/airports');
+        const response = await axios.get('https://backend-assign-x1t0.onrender.com/airports');
         setAirports(response.data);
       } catch (error) {
         console.error('Error fetching airports:', error);
@@ -46,7 +46,7 @@ const Table = () => {
   const saveAirport = async () => {
     if (editingIndex !== null) {
       try {
-        const response = await axios.put(`http://localhost:5000/airports/${airports[editingIndex]._id}`, newAirport);
+        const response = await axios.put(`https://backend-assign-x1t0.onrender.com/airports/${airports[editingIndex]._id}`, newAirport);
         const updatedAirports = airports.map((airport, i) =>
           i === editingIndex ? response.data : airport
         );
@@ -56,7 +56,7 @@ const Table = () => {
       }
     } else {
       try {
-        const response = await axios.post('http://localhost:5000/airports', newAirport);
+        const response = await axios.post('https://backend-assign-x1t0.onrender.com/airports', newAirport);
         setAirports([...airports, response.data]);
       } catch (error) {
         console.error('Error saving airport:', error);
@@ -69,7 +69,7 @@ const Table = () => {
 
   const deleteAirport = async (index) => {
     try {
-      await axios.delete(`http://localhost:5000/airports/${airports[index]._id}`);
+      await axios.delete(`https://backend-assign-x1t0.onrender.com/airports/${airports[index]._id}`);
       const updatedAirports = airports.filter((_, i) => i !== index);
       setAirports(updatedAirports);
     } catch (error) {
