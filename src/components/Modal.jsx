@@ -16,6 +16,7 @@ const Modal = ({ isOpen, onClose, onSave, airport, handleInputChange }) => {
               value={airport.name}
               onChange={handleInputChange}
               className="w-full p-2 border rounded"
+              required
             />
           </div>
           <div className="mb-4">
@@ -26,6 +27,7 @@ const Modal = ({ isOpen, onClose, onSave, airport, handleInputChange }) => {
               value={airport.country}
               onChange={handleInputChange}
               className="w-full p-2 border rounded"
+              required
             />
           </div>
           <div className="mb-4">
@@ -36,6 +38,7 @@ const Modal = ({ isOpen, onClose, onSave, airport, handleInputChange }) => {
               value={airport.code}
               onChange={handleInputChange}
               className="w-full p-2 border rounded"
+              required
             />
           </div>
           <div className="mb-4">
@@ -46,6 +49,7 @@ const Modal = ({ isOpen, onClose, onSave, airport, handleInputChange }) => {
               value={airport.terminals}
               onChange={handleInputChange}
               className="w-full p-2 border rounded"
+              required
             />
           </div>
           <div className="flex justify-end space-x-2">
